@@ -9,48 +9,47 @@ const SubmitInfo = () => {
         <p className="sent-text">Your application has been succesfully sent. We will contact you soon. Thank you for your trust! </p>
      )
   }
-
   return (
     <div className="container-submit">
       <div className="submit-info">
         <div className="submit-content">
           <div>
-            <p>A number</p>
+            <p> A-number</p>
             <h6>{personData.number}</h6>
             <hr />
           </div>
           <div>
-            <p>  First Name / Имя </p>
+            <p> Имя </p>
             <h6>{personData.firstName}</h6>
             <hr />
           </div>
           <div>
-            <p>Last Name / Фамилия</p>
+            <p> Фамилия</p>
             <h6>{personData.lastName}</h6>
             <hr />
           </div>
           <div>
-            <p>Date of Birth / Дата рождения</p>
+            <p> Дата рождения</p>
             <h6>{personData.dateBirth}</h6>
             <hr />
           </div>
           <div>
-            <p>Gender/Пол</p>
+            <p>Пол</p>
             <h6>{personData.gender}</h6>
             <hr />
           </div>
           <div>
-            <p> Place of Birth / Место Рождения (город,страна)</p>
+            <p> Страна рождения</p>
             <h6>{personData.place}</h6>
             <hr />
           </div>
           <div>
-            <p> Nationality / Гражданство</p>
+            <p>Гражданство</p>
             <h6>{personData.nationality}</h6>
             <hr />
           </div>
           <div>
-            <p>Phone / Телефон</p>
+            <p>Телефон</p>
             <h6>{personData.phone}</h6>
             <hr />
           </div>
@@ -60,17 +59,18 @@ const SubmitInfo = () => {
             <hr />
           </div>
           <div>
-            <p>Residence Address / Адрес Проживания</p>
+            <p>Адрес Проживания</p>
             <h6>{personData.address}</h6>
             <hr />
           </div>
           <div>
-            <p>Причиняли ли вам или вашей семьей вред, жестокое обращение, или угрозы в прошлом от кого-либо?</p>
+
+            <p>Подвергались ли Вы или ваша семья угрозам или вреду?</p>
             <h6>{personData.radio}</h6>
             <hr />
           </div>
           <div>
-            <p> Кто Вам нанес вред, жестокое обращение или угрозы? </p>
+            <p>Кто Вам угрожал или причинил вред? </p>
             <h6>{personData.threat}</h6>
             <hr />
           </div>
@@ -80,25 +80,30 @@ const SubmitInfo = () => {
             <hr />
           </div>
           <div>
-            <p>Когда вред, жестокое обращение или угрозы произошли? </p>
+            <p>Когда произошли эти инциденты вреда (примерные даты)?  </p>
             <h6>{personData.when}</h6>
             <hr />
           </div>
           <div>
-            <p>Почему вам причинили вред? (расовая или этническая нетерпимость, религиозная, из-за политических взглядов, из-за сексуальной ориентации, и других причин).</p>
-            <h6>{personData.why}</h6>
+            <p>Из-за чего вам угрожали и/или причинили вред? (выберите все подходящие вам варианты и объясните ниже) </p>
+            <h6>{personData.why},{personData.another},{personData.extra}</h6>
             <hr />
           </div>
           <div>
-            <p> Какого вреда или жестокого обращения вы опасаетесь если вы вернетесь в свою страну? </p>
+            <p>Что будет с Вами если вы вернетесь в свою страну? </p>
             <h6>{personData.harm}</h6>
+            <hr />
+          </div>
+          <div>
+            <p>Что еще вы хотите сообщить адвокату?  </p>
+            <h6>{personData.else}</h6>
             <hr />
           </div>
         </div>
         <div className="btns-submit">
         {result ? <Result/> : null}   
           <button onClick={handlePrevClick} className="btn3-prev">Prev</button>
-          <button type="submit" value="sendForm"className="btn-submit"> Submit </button>
+          <button type="submit" value="sendForm" className="btn-submit"> Submit </button>
         </div>
       </div>
     </div>

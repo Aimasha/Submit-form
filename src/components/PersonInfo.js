@@ -6,20 +6,17 @@ import { FormContext } from "../Contexts/FormContext"
 
 const PersonInfo = () => {
 
-  const { personData, setPersonData, handleClickNext } = useContext(FormContext)
+  const { setPage,page,setValidated, validated, personData, setPersonData, handleClickNext } = useContext(FormContext)
 
-  // const alert = () => {
-  //   if ( !personData.firstName){
-  //   }
-  // }
   return (
     <div className="container">
-      
+
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default">
-          A-number (Если имеется)
+          A-number
         </InputGroup.Text>
         <Form.Control
+          required
           type="text"
           name="number"
           value={personData.number}
@@ -27,14 +24,15 @@ const PersonInfo = () => {
           aria-label="Large"
           aria-describedby="inputGroup-sizing-default"
         />
-      </InputGroup>
 
+      </InputGroup>
       <InputGroup
         className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default">
-          First name
+          Имя
         </InputGroup.Text>
         <Form.Control
+          required
           type="text"
           name="first_name"
           value={personData.firstName}
@@ -43,11 +41,13 @@ const PersonInfo = () => {
           aria-describedby="inputGroup-sizing-default"
         />
       </InputGroup>
+
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default">
-          Last name 
+          Фамилия
         </InputGroup.Text>
         <Form.Control
+          required
           type="text"
           name="last_name"
           value={personData.lastName}
@@ -56,23 +56,33 @@ const PersonInfo = () => {
           aria-describedby="inputGroup-sizing-default"
         />
       </InputGroup>
-     
+      <div>
+        <select name="gender" value={personData.gender} onChange={(e) => setPersonData({ ...personData, gender: e.target.value })} >
+          <option value="gender">Пол</option>
+          <option value="female">Женский</option>
+          <option value="male">Мужской</option>
+          <option value="other">Другой</option>
+        </select>
+      </div>
+
+
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default">
-          Date of Birth 
+          Дата рождения
         </InputGroup.Text>
         <Form.Control
+          required
           name="date_birth"
           value={personData.dateBirth}
           onChange={(e) => setPersonData({ ...personData, dateBirth: e.target.value })}
           type="date" />
-        </InputGroup>
-
+      </InputGroup>
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default">
-          Place of Birth
+          Страна рождения
         </InputGroup.Text>
         <Form.Control
+          required
           type="text"
           name="place_birth"
           value={personData.place}
@@ -82,62 +92,60 @@ const PersonInfo = () => {
         />
       </InputGroup>
 
-      <select name="gender" value={personData.gender} onChange={(e) => setPersonData({ ...personData, gender: e.target.value })} >
-          <option value="gender">Пол</option>
-          <option value="female">Женский</option>
-          <option value="male">Мужской</option>
-          <option value="other">Другой</option>
-        </select> 
-        
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default">
-          Nationality
+          Гражданство
         </InputGroup.Text>
         <Form.Control
+          required
           type="text"
           name="nation"
-          required
           value={personData.nationality}
           onChange={(e) => setPersonData({ ...personData, nationality: e.target.value })}
           aria-label="Default"
           aria-describedby="inputGroup-sizing-default"
         />
       </InputGroup>
+
       <div className="number-email">
         <InputGroup className="mb-3">
           <InputGroup.Text id="inputGroup-sizing-default">
-            Phone
+            Телефон
           </InputGroup.Text>
           <Form.Control
+            required
             type="number"
             name="phone"
-            required
             value={personData.phone}
             onChange={(e) => setPersonData({ ...personData, phone: e.target.value })}
             aria-label="Default"
             aria-describedby="inputGroup-sizing-default"
           />
         </InputGroup>
+
         <InputGroup className="mb-3">
           <InputGroup.Text id="inputGroup-sizing-default">
             Email
           </InputGroup.Text>
           <Form.Control
+            required
             type="email"
             name="email"
-            required
             value={personData.email}
             onChange={(e) => setPersonData({ ...personData, email: e.target.value })}
             aria-label="Default"
             aria-describedby="inputGroup-sizing-default"
           />
+
         </InputGroup>
+
       </div>
       <InputGroup className="mb-3">
         <InputGroup.Text id="inputGroup-sizing-default">
-          Residence Address
+          Адрес проживания
         </InputGroup.Text>
         <Form.Control
+          required
           type="text"
           name="address"
           value={personData.address}
@@ -146,12 +154,13 @@ const PersonInfo = () => {
           aria-describedby="inputGroup-sizing-default"
         />
       </InputGroup>
-      <button disabled={ !personData.firstName } 
-       type="submit" 
-       onClick={handleClickNext} 
-       className="btn-next">
-         Next
-       </button>
+      <button
+        disabled={!personData.address && handleClickNext}
+        onClick={handleClickNext}
+        className="btn-next">
+        Next
+      </button>
+
     </div>
   )
 }
