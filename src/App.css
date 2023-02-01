@@ -1,5 +1,6 @@
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 640px){
+@media only screen and (min-device-width : 320px) and (max-device-width : 926px){
+ 
   header {
     background-color: #004767;
     color: rgb(252, 252, 252);
@@ -12,7 +13,9 @@
     padding-bottom: 15px;
     margin-left: 150px;
   }
- 
+   .submit-content {
+    margin-left: 15px;
+   }
   nav {
     padding: 10px;
     text-align: center;
@@ -31,6 +34,7 @@
   }
  .container {
   margin-top: 20px; 
+  /* border: 1px solid gray; */
 } 
  .service-container {
   margin: auto;
@@ -66,6 +70,8 @@ textarea {
     color: white;
     font-size: 18px;
     width: 20%;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
   .active {
     color: white;
@@ -98,6 +104,8 @@ textarea {
     font-size: 18px;
     width: 25%;
     margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   } 
   .btn-prev {
     background-color: #03BFCB;
@@ -108,6 +116,8 @@ textarea {
     font-size: 18px;
     width: 25%;
     margin-left: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
   .btn-submit{
     background-color: #03BFCB;
@@ -118,6 +128,8 @@ textarea {
     font-size: 18px;
     width: 25%;
     margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
   .btn3-prev{
     background-color: #03BFCB;
@@ -128,11 +140,13 @@ textarea {
     font-size: 18px;
     width: 25%;
     margin-left: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 } 
 
 
-@media only screen and (min-device-width : 640px) and (max-device-width : 1605px){
+@media only screen and (min-device-width : 926px) and (max-device-width : 1605px){
   .container {
     width: 70%;
     margin-top: 10px;
@@ -219,7 +233,7 @@ textarea {
     width: 100%;
     text-align: center;
   }
- h6 .header {
+   h6 .header {
     padding-top: 10px;
     padding-bottom: 15px;
     margin-left: 20px;
